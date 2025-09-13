@@ -50,10 +50,10 @@ Los mensajes eliminados se compactan al final, manteniendo el resto del historia
 
 ## Algoritmo utilizado
 Se utiliza la técnica de Two Pointers:
--left: recorre el historial desde el inicio.
--right: recorre desde el final.
--Cuando left encuentra un eliminado y right encuentra un válido, se intercambian.
--Así, los eliminados se van acumulando al final sin necesidad de borrar elementos uno a uno.
+- left: recorre el historial desde el inicio.
+- right: recorre desde el final.
+- Cuando left encuentra un eliminado y right encuentra un válido, se intercambian.
+- Así, los eliminados se van acumulando al final sin necesidad de borrar elementos uno a uno.
 Este enfoque es O(n) y evita realocar memoria muchas veces.
 ```bash
 g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
