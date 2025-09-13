@@ -34,8 +34,8 @@ Este proyecto muestra:
 ## Prerequisitos
 Para compliar este proyecto, necesitas:
 
--Compilador de C++ compatible con C++11 o superior
--Las siguientes librerias de C++:
+- Compilador de C++ compatible con C++11 o superior
+- Las siguientes librerias de C++:
 
 ```cpp
 #include <vector>
