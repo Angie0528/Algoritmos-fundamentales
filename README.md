@@ -32,7 +32,7 @@ Este proyecto muestra:
 - `main()`: ejecuta la simulación.
 
 ## Prerequisitos
-Para compliar este proyecto, necesitas:
+Para compilar este proyecto, necesitas:
 
 - Compilador de C++ compatible con C++11 o superior
 - Las siguientes librerias de C++:
