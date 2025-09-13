@@ -31,6 +31,19 @@ Este proyecto muestra:
 - `algoritmoLimpiar(vector<Message>& chat)`: compacta el historial usando *two pointers*.
 - `main()`: ejecuta la simulación.
 
+## Prerequisitos
+Para compliar este proyecto, necesitas:
+
+-Compilador de C++ compatible con C++11 o superior
+-Las siguientes librerias de C++:
+
+```cpp
+#include <vector>
+#include <string>
+```
+
+
+
 ## Ejecución
 **Abrir terminal o consola en el directorio donde se encuentra el archivo chat_cleaner.cpp.** 
 Por ejemplo, si el proyecto está en C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner:
