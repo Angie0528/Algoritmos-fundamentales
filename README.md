@@ -32,8 +32,27 @@ Este proyecto muestra:
 - `main()`: ejecuta la simulación.
 
 ## Ejecución
-Compilar el programa y ejecutar:
+**Abrir terminal o consola en el directorio donde se encuentra el archivo chat_cleaner.cpp.** 
+Por ejemplo, si el proyecto está en C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner:
+
+cd "C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner"
+
+**Compilar el código usando g++ (o cualquier compilador compatible con C++11):**
+
+g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
+
+Esto generará un ejecutable llamado chat_cleaner en Linux/macOS o chat_cleaner.exe en Windows.
+
+**Ejecutar el programa:**
+
+- En Linux/macOS:
+
 ./chat_cleaner
+
+
+- En Windows (PowerShell o CMD):
+
+chat_cleaner.exe
 
 ## Ejemplo de salida
 Antes de limpiar:
