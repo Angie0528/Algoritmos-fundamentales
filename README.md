@@ -1,7 +1,7 @@
 # Algoritmos-fundamentales
 Repositorio con implementaciones de algoritmos para la clase de Programacion
 
-# Que es un Hash Table?
+# ¿Que es un Hash Table?
 Es una esructura de datos que ayuda a almacenar key y values. Su ventaja principal es que las operaciones de insert, get y remove tienen un tiempo cercan a 0(1), esto es ideal cuando se reuiere un acceso rapido, como bases de datos o compliadores.
 
 # Implementacion de Hash Table 
@@ -10,87 +10,64 @@ El proyecto implemeta una estructura de datos Hash Table en C++ aplicando los co
 - Manejo de colisiones
 - Opreaciones (insert, get, remove)
 
-## Descripción
-En una aplicación de chat, cuando un usuario elimina un mensaje, este no se borra inmediatamente de memoria (porque reorganizar memoria constantemente sería costoso).  
-En su lugar, se marca el mensaje con un flag `deleted = true`.  
+## Componentes Principales
+- Array/Vector: Almacena los elementos
+- Función Hash: Convierte claves en índices válidos
+- Manejo de Colisiones: Resuelve cuando dos claves generan el mismo índice
 
-Más adelante, cuando el historial crece demasiado, se ejecuta un **algoritmo de limpieza** que compacta el historial, moviendo los mensajes válidos al frente y dejando los eliminados al final.
 
-Este proyecto muestra:
-- Cómo simular un historial de mensajes con usuarios y textos.
-- Cómo marcar mensajes como eliminados.
-- Cómo usar el algoritmo **two pointers** para compactar eficientemente el historial.
+## ¿Por qué Quadratic Probing?
+Se eligió Quadratic Probing para resolver colisiones por las siguientes ventajas:
+- Mejor distribución: Evita el clustering primario del linear probing
+- Eficiencia de caché: Mantiene localidad espacial mejor que separate chaining
+- Memoria optimizada: No requiere estructuras adicionales como listas enlazadas
+- **Implementación simple**: Más directo que double hashing
 
-## Funcionalidades
-- Generación de un historial de `n` mensajes entre dos usuarios (Alice y Bob).
-- Cada cierto número de mensajes, se marcan algunos como eliminados.
-- Visualización de los primeros 10 mensajes generados.
-- Algoritmo de limpieza que reorganiza el historial:
-  - Los mensajes no eliminados quedan al inicio.
-  - Los eliminados se mandan al final.
-- Reporte de cuántos mensajes fueron eliminados.
+## Funcionamiento
+Cuando ocurre una colisión en la posición `h(k)`, se prueba:
+- `h(k) + 1²`, `h(k) + 2²`, `h(k) + 3²`, etc.
+- Fórmula: `(h(k) + i²) % capacity`
 
-## Estructura del código
-- `struct Message`: representa cada mensaje (id, remitente, texto, flag eliminado).
-- `generateChatHistory(int n)`: genera el historial con mensajes de ejemplo.
-- `algoritmoLimpiar(vector<Message>& chat)`: compacta el historial usando *two pointers*.
-- `main()`: ejecuta la simulación.
+## Análisis de Complejidad
+Método `insert(key, value)`
+- Caso promedio: O(1)
+- Caso peor: O(n) - cuando hay muchas colisiones
+- Explicación: Con factor de carga < 0.7, el probing encuentra posición rápidamente
 
-## Prerequisitos
-Para compilar este proyecto, necesitas:
+Método `get(key)` 
+- Caso promedio: O(1)
+- Caso peor: O(n) - búsqueda exhaustiva
+- Explicación: Similar a insert, depende del clustering y factor de carga
 
-- Compilador de C++ compatible con C++11 o superior
-- Las siguientes librerias de C++:
-
-```cpp
-#include <vector>
-#include <string>
-```
+Método `remove(key)`
+- Caso promedio: O(1) 
+- Caso peor: O(n) - búsqueda + lazy deletion
+- Explicación: Usa lazy deletion (marca como eliminado) para mantener cadenas de probing
 
 
 
-## Ejecución
-**Abrir terminal o consola en el directorio donde se encuentra el archivo chat_cleaner.cpp.** 
-Por ejemplo, si el proyecto está en C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner:
+## Características de la Implementación
+Funcionalidades Implementadas:
+- Función Hash: Suma de valores ASCII con módulo
+- Quadratic Probing: Resolución de colisiones eficiente
+- Redimensionamiento: Automático cuando factor de carga > 0.7
+- Lazy Deletion: Mantiene integridad de búsquedas
+- Estadísticas: Monitoreo de rendimiento  
 
-cd "C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner"
+Optimizaciones:
+- Factor de carga controlado para mantener eficiencia
+- Redimensionamiento dinámico para evitar degradación
+- Reutilización de espacios eliminados
+- Validaciones de entrada robustas
 
-**Compilar el código usando g++ (o cualquier compilador compatible con C++11):**
-
-g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
-
-Esto generará un ejecutable llamado chat_cleaner en Linux/macOS o chat_cleaner.exe en Windows.
-
-**Ejecutar el programa:**
-
-- En Linux/macOS:
-
-./chat_cleaner
-
-
-- En Windows (PowerShell o CMD):
-
-chat_cleaner.exe
-
-## Ejemplo de salida
-Antes de limpiar:
-1 [Alice]: Hola (deleted)
-2 [Bob]: ¿Cómo estás?
-3 [Alice]: Todo bien
-...
-Total mensajes generados: 5000
-
-Después de limpiar:
-Se han eliminado correctamente 294 mensajes de tu historial.
-
-Los mensajes eliminados se compactan al final, manteniendo el resto del historial válido.
-
-## Algoritmo utilizado
-Se utiliza la técnica de Two Pointers:
-- left: recorre el historial desde el inicio.
-- right: recorre desde el final.
-- Cuando left encuentra un eliminado y right encuentra un válido, se intercambian.
-- Así, los eliminados se van acumulando al final sin necesidad de borrar elementos uno a uno.
-Este enfoque es O(n) y evita realocar memoria muchas veces.
+## Instrucciones de Compilación
 ```bash
-g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
+Compilar
+make all
+
+Ejecutar
+make run
+
+Limpiar
+make clean
+```
