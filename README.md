@@ -1,4 +1,4 @@
-# Algoritmos-fundamentales
+# Tarea Linked List
 Repositorio con implementaciones de algoritmos para la clase de Programacion
 
 # Chat History Cleaner 
