@@ -55,7 +55,7 @@ lista.display()  # Output: Lista: [10, 20]
 - `test_linkedlist.py` - Suite de pruebas
 - `documentacion.md` - Documentación técnica detallada
 
-## Ejecutar Pruebas
+## Para ejecutar Pruebas
 
 ```bash
 python test_linkedlist.py
