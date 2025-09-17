@@ -1,7 +1,7 @@
 # Tarea Linked List
 
 # Video explicativo del codigo
-[![Video Explicativo](Placeholderrr)]
+[![Video Explicativo](Video)]
 
 ## ¿Que es una Lista Ligada?
 
