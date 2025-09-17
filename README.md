@@ -1,5 +1,8 @@
 # Tarea Linked List
 
+# Video explicativo del codigo
+[![Video Explicativo](Placeholderrr)]
+
 ## ¿Que es una Lista Ligada?
 
 Una Lista Ligada es una estructura de datos donde cada elemento (nodo) contiene datos y una referencia al siguiente nodo:
@@ -16,7 +19,7 @@ Una Lista Ligada es una estructura de datos donde cada elemento (nodo) contiene 
 |---------|--------------|-------|
 | **Insercion/Eliminacion** | O(1) con referencia | O(n) requiere desplazamiento |
 | **Acceso por indice** | O(n) debe recorrer | O(1) acceso directo |
-| **Memoria** | Dinámica, solo lo necesario | Fija o redimensionable |
+| **Memoria** | Dinamica, solo lo necesario | Fija o redimensionable |
 | **Uso recomendado** | Muchas inserciones/eliminaciones | Acceso frecuente por indice |
 
 ## Complejidad Temporal
