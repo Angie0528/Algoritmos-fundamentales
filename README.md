@@ -1,7 +1,7 @@
 # Actividad: Implementación de Algoritmos de Ordenamiento
 
 # Video Explicativo
-[![Video Explicativo](https://youtu.be/tXfiSuJEbd8)](https://youtu.be/tXfiSuJEbd8)
+[![Video Explicativo](https://youtu.be/by9gzt9yq6o)](https://youtu.be/by9gzt9yq6o)
 
 ## Algoritmos Implementados
 
