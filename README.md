@@ -1,7 +1,7 @@
 # Tarea Linked List
 
 # Video explicativo del codigo
-[![Video Explicativo](https://www.youtube.com/watch?v=)]
+[![Video Explicativo](https://youtu.be/tXfiSuJEbd8)](https://youtu.be/tXfiSuJEbd8)
 
 ## ¿Que es una Lista Ligada?
 
