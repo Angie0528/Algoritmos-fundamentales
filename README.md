@@ -1,4 +1,4 @@
-# Algoritmos-fundamentales
+# Algoritmos-fundamental
 Repositorio con implementaciones de algoritmos para la clase de Programacion
 
 # Chat History Cleaner 
