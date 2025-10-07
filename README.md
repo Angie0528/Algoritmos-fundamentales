@@ -11,6 +11,19 @@ Se necesita:
 - Un compilador de C++
 - Archivo llamado `Datos.txt`
 
+# Funcionamiento
+1. Abre el archivo de datos
+2. Se inicializa el buffer
+3. En el ciclo:
+   - Simula la caida de conexion
+   - Si esta online lee el frame y lo agrega al buffer
+   - Si el buffer esta lleno elimina el frame mas antiguo
+   - Se reproduce el frame mas antiguo
+   - Si esta offline, se puede reconectar
+4. Termina cuando no hay mas datos y el buffer esta vacio
+    
+      
+
 ## Librerias utilizadas
 - `#include <iostream>`           Para el cout
 - `#include <fstream>`            Lectura del archivo de chunks
