@@ -6,6 +6,11 @@ Se hace un simulacion de streaming usando un buffer controlado por un algoritmo 
 
 **Reproduccion:** Simula la reproduccion de los datos que estan dentro del buffer. Si el buffer no esta vacio entonces agarra el primer elemento en la cola, lo muestra en al consola y lo elimina del buffer.
 
+# Requisitos
+Se necesita:
+- Un compilador de C++
+- Archivo llamado `Datos.txt`
+
 ## Librerias utilizadas
 - `#include <iostream>`           Para el cout
 - `#include <fstream>`            Lectura del archivo de chunks
