@@ -4,10 +4,10 @@ En el sistema se hace un simulacion de streaming usando un buffer controlado por
 #
 
 ## Librerias utilizadas
-- <iostream>           Para el cout
-- <fstream>            Lectura del archivo de chunks
-- <string>             Texto
-- <deque>              Implemetaicon de buffer
-- <thread>             Red o reproduccion
-- <chrono>             Pausas entre frames
+- #include <iostream>           Para el cout
+- #include <fstream>            Lectura del archivo de chunks
+- #include <string>             Texto
+- #include <deque>              Implemetaicon de buffer
+- #include <thread>             Red o reproduccion
+- #include <chrono>             Pausas entre frames
 
