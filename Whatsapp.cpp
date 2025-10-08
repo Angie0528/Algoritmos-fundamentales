@@ -68,6 +68,5 @@ int main() {
     }
 
     cout << "Total mensajes generados: " << chat.size() << endl;
-
     algoritmoLimpiar(chat); // Implementamos un algoritmo usando two pointers, donde los eliminados estan al final del vector
 }
