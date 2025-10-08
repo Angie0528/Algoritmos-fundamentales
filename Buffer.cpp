@@ -8,66 +8,67 @@
 
 using namespace std;
 
-void slidingWindow(ifstream& archivo, deque<string>& buffer, int windowSize) {
-    string chunk;
-    getline(archivo, chunk);
-    if (!chunk.empty()) {
-        buffer.push_back(chunk);
-        cout << "Chunk Recibido: " << chunk << endl;
-    }
-
-    if ((int)buffer.size() > windowSize) {
-        cout << "Ventana llena: " << buffer.front() << endl;
-        buffer.pop_front();
+void slidingWindow(deque<string>& buffer, ifstream& archivo){
+    string nuevo;
+    if (getline(archivo, nuevo)) {
+        buffer.push_back(nuevo);
+        cout << "Chunk recibido: " << nuevo << "\n";
     }
 }
 
-void Reproduccion(deque<string>& buffer) {
-    if (!buffer.empty()) {
-        cout << "Reproduciendo frame: " << buffer.front() << endl;
-        buffer.pop_front();
-    } else {
-        cout << "Buffer vacio -> buffering...\n";
+void Reproduccion(deque<string>& buffer, ifstream& archivo, bool online){
+    if (buffer.empty()) { 
+        cout << "Buffer vacio - buffering...\n";
+        return;
     }
+
+    string antiguo = buffer.front();
+    buffer.pop_front();
+    cout << "Reproduciendo frame: " << antiguo << "\n";
+
+    if(online) slidingWindow(buffer, archivo);
 }
 
-int main() {
+bool estadoRed(){
+    int random = rand() % 10;
+    if (random <= 3){
+        cout << "Error en la conexion - Offline\n";
+        return false; 
+    }
+    return true;
+}
+
+void Recuperacion(deque<string>& buffer, ifstream& archivo){
+    if(archivo.eof()) return;
+    cout << "Llenando buffer...\n";
+    slidingWindow(buffer, archivo);
+}
+
+int main(){
     ifstream archivo("Datos.txt");
-    if (!archivo.is_open()) {
-        cout << "No se pudo abrir el archivo.\n";
-        return 1;
-    }
-
     deque<string> buffer;
-    int windowSize = 3;
-    bool online = true;
-    int ciclos = 0;
+    int windowSize = 8;
 
-    while (!archivo.eof() || !buffer.empty()) {
-        if (rand() % 10 < 2) {
-            online = false;
-            cout << "\nOffline\n";
-        }
+    for (int i = 0; i < windowSize && !archivo.eof(); i++) {
+        Recuperacion(buffer, archivo);
+    }
+    cout << "Online\n";
 
-        if (online) {
-            slidingWindow(archivo, buffer, windowSize);
-        } else {
-            cout << "Offline no puede llegar datos\n";
-        }
+    while(!archivo.eof() || !buffer.empty()){
+        bool online = estadoRed();
 
-
-        Reproduccion(buffer);
-
-
-        if (!online && rand() % 10 > 7) {
-            online = true;
-            cout << "Reconectado\n";
+        if(online){
+            if(buffer.size() < windowSize){
+                Recuperacion(buffer, archivo);
+            }else{
+                Reproduccion(buffer, archivo, online);
+            }
+        }else{
+            if(!buffer.empty()) Reproduccion(buffer, archivo, online);
         }
 
         this_thread::sleep_for(chrono::milliseconds(200));
-        ciclos++;
-        if (archivo.eof() && buffer.empty()) break;
     }
 
-    return 0;
+    cout << "\nFin de lectura del archivo\n";
 }
