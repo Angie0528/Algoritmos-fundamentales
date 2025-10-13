@@ -1,91 +1,114 @@
-# Algoritmos-fundamentales
-Repositorio con implementaciones de algoritmos para la clase de Programacion
+# Implementacion de Estructuras de Datos: Stack y Queue en Python
 
-# Chat History Cleaner 
+Este proyecto contiene la implementacion desde cero de dos estructuras de datos fundamentales en programacion: **Stacks** y **Queues**, utilizando Python. Cada estructura incluye sus metodos basicos y se acompaña de un script de prueba que demuestra su funcionamiento.
 
-Este proyecto implementa una simulación de historial de chat y un algoritmo de compactación de mensajes eliminados (garbage collection) en C++.
+## Estructuras de Datos Implementadas
 
-## Descripción
-En una aplicación de chat, cuando un usuario elimina un mensaje, este no se borra inmediatamente de memoria (porque reorganizar memoria constantemente sería costoso).  
-En su lugar, se marca el mensaje con un flag `deleted = true`.  
+### 1. Stack (Pila)
 
-Más adelante, cuando el historial crece demasiado, se ejecuta un **algoritmo de limpieza** que compacta el historial, moviendo los mensajes válidos al frente y dejando los eliminados al final.
+Una pila es una estructura de datos que sigue el principio **LIFO (Last In, First Out)**, lo que significa que el ultimo elemento en entrar es el primero en salir. Es analoga a una pila de platos: solo se puede agregar o quitar un plato de la parte superior.
 
-Este proyecto muestra:
-- Cómo simular un historial de mensajes con usuarios y textos.
-- Cómo marcar mensajes como eliminados.
-- Cómo usar el algoritmo **two pointers** para compactar eficientemente el historial.
+La implementacion se encuentra en el archivo `stack.py`.
 
-## Funcionalidades
-- Generación de un historial de `n` mensajes entre dos usuarios (Alice y Bob).
-- Cada cierto número de mensajes, se marcan algunos como eliminados.
-- Visualización de los primeros 10 mensajes generados.
-- Algoritmo de limpieza que reorganiza el historial:
-  - Los mensajes no eliminados quedan al inicio.
-  - Los eliminados se mandan al final.
-- Reporte de cuántos mensajes fueron eliminados.
+#### Metodos del Stack
 
-## Estructura del código
-- `struct Message`: representa cada mensaje (id, remitente, texto, flag eliminado).
-- `generateChatHistory(int n)`: genera el historial con mensajes de ejemplo.
-- `algoritmoLimpiar(vector<Message>& chat)`: compacta el historial usando *two pointers*.
-- `main()`: ejecuta la simulación.
+| Metodo         | Descripcion                                           |
+|----------------|-------------------------------------------------------|
+| `push(element)`| Inserta un elemento en la parte superior de la pila.  |
+| `pop()`        | Elimina y devuelve el elemento de la parte superior.  |
+| `peek()`       | Devuelve el elemento superior sin eliminarlo.         |
+| `is_empty()`   | Retorna `True` si la pila esta vacia, `False` en caso contrario. |
+| `size()`       | Devuelve el numero total de elementos en la pila.     |
 
-## Prerequisitos
-Para compilar este proyecto, necesitas:
+### 2. Queue (Cola)
 
-- Compilador de C++ compatible con C++11 o superior
-- Las siguientes librerias de C++:
+Una cola es una estructura de datos que sigue el principio **FIFO (First In, First Out)**, donde el primer elemento en entrar es el primero en salir. Funciona como una fila de personas esperando para ser atendidas: la primera persona que llega es la primera en ser atendida.
 
-```cpp
-#include <vector>
-#include <string>
+La implementacion se encuentra en el archivo `queue.py`.
+
+#### Metodos de la Queue
+
+| Metodo           | Descripcion                                         |
+|------------------|-----------------------------------------------------|
+| `enqueue(element)`| Agrega un elemento al final de la cola.             |
+| `dequeue()`      | Elimina y devuelve el elemento del frente.          |
+| `front()`        | Devuelve el elemento del frente sin eliminarlo.     |
+| `is_empty()`     | Retorna `True` si la cola esta vacia, `False` en caso contrario. |
+| `size()`         | Devuelve el numero total de elementos en la cola.   |
+
+## Estructura de Archivos
+
+El proyecto esta organizado de la siguiente manera:
+
+```
+/
+├── stack.py      # Contiene la clase Stack y su logica.
+├── queue.py      # Contiene la clase Queue y su logica.
+└── main.py       # Script de prueba con ejemplos de uso para ambas estructuras.
 ```
 
+## Como Ejecutar las Pruebas
 
+Para probar las implementaciones, simplemente ejecuta el script `main.py` desde la terminal. Este script creara instancias de `Stack` y `Queue`, ejecutara sus metodos principales y mostrara el funcionamiento paso a paso en la consola.
 
-## Ejecución
-**Abrir terminal o consola en el directorio donde se encuentra el archivo chat_cleaner.cpp.** 
-Por ejemplo, si el proyecto está en C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner:
-
-cd "C:\Users\Usuario\Documents\Algoritmos-fundamentales\ChatHistoryCleaner"
-
-**Compilar el código usando g++ (o cualquier compilador compatible con C++11):**
-
-g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
-
-Esto generará un ejecutable llamado chat_cleaner en Linux/macOS o chat_cleaner.exe en Windows.
-
-**Ejecutar el programa:**
-
-- En Linux/macOS:
-
-./chat_cleaner
-
-
-- En Windows (PowerShell o CMD):
-
-chat_cleaner.exe
-
-## Ejemplo de salida
-Antes de limpiar:
-1 [Alice]: Hola (deleted)
-2 [Bob]: ¿Cómo estás?
-3 [Alice]: Todo bien
-...
-Total mensajes generados: 5000
-
-Después de limpiar:
-Se han eliminado correctamente 294 mensajes de tu historial.
-
-Los mensajes eliminados se compactan al final, manteniendo el resto del historial válido.
-
-## Algoritmo utilizado
-Se utiliza la técnica de Two Pointers:
-- left: recorre el historial desde el inicio.
-- right: recorre desde el final.
-- Cuando left encuentra un eliminado y right encuentra un válido, se intercambian.
-- Así, los eliminados se van acumulando al final sin necesidad de borrar elementos uno a uno.
-Este enfoque es O(n) y evita realocar memoria muchas veces.
 ```bash
-g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
+python3 main.py
+```
+
+## Salida de Ejemplo
+
+Al ejecutar `main.py`, veras una salida detallada que demuestra como se agregan y eliminan elementos en ambas estructuras, junto con ejemplos practicos.
+
+```
+==================================================
+PRUEBA DE STACK (PILA)
+==================================================
+
+1. Se crea una pila vacia: Stack([])
+   ¿Esta vacia? True
+   Tamaño: 0
+
+2. Agregando elementos con push():
+   Se agrego 10 -> Stack([10])
+   Se agrego 20 -> Stack([10, 20])
+   ...
+
+4. Eliminando elementos con pop():
+   Se removio 50 -> Stack([10, 20, 30, 40])
+   ...
+
+==================================================
+PRUEBA DE QUEUE (COLA)
+==================================================
+
+1. Se crea una cola vacia: Queue([])
+   ¿Esta vacia? True
+   Tamaño: 0
+
+2. Agregando elementos con enqueue():
+   Se agrego A -> Queue(['A'])
+   Se agrego B -> Queue(['A', 'B'])
+   ...
+
+4. Eliminando elementos con dequeue():
+   Se removio A -> Queue(['B', 'C', 'D', 'E'])
+   ...
+
+==================================================
+EJEMPLO PRACTICO
+==================================================
+
+--- Simulacion de historial de navegacion (Stack) ---
+Visitando paginas:
+  Visitando: google.com
+  ...
+
+--- Simulacion de cola de impresion (Queue) ---
+Agregando documentos a la cola:
+  En cola: documento1.pdf
+  ...
+
+==================================================
+TODAS LAS PRUEBAS COMPLETADAS
+==================================================
+```
