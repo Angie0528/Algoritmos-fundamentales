@@ -49,15 +49,13 @@ El proyecto esta organizado de la siguiente manera:
 
 ## Como Ejecutar las Pruebas
 
-Para probar las implementaciones, simplemente ejecuta el script `main.py` desde la terminal. Este script creara instancias de `Stack` y `Queue`, ejecutara sus metodos principales y mostrara el funcionamiento paso a paso en la consola.
+Para probar las implementaciones, simplemente se ejecuta el script `main.py` desde la terminal.
 
 ```bash
 python3 main.py
 ```
 
 ## Salida de Ejemplo
-
-Al ejecutar `main.py`, veras una salida detallada que demuestra como se agregan y eliminan elementos en ambas estructuras, junto con ejemplos practicos.
 
 ```
 ==================================================
@@ -109,6 +107,6 @@ Agregando documentos a la cola:
   ...
 
 ==================================================
-TODAS LAS PRUEBAS COMPLETADAS
+PRUEBAS COMPLETADAS
 ==================================================
 ```
