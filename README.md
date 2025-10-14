@@ -33,6 +33,5 @@ Se necesita:
 - `#include <chrono>`             Pausas entre frames
 
 ## Video
-https://youtu.be/qR1oZLJ1y04
-
+https://youtu.be/KojGbKAm-T0
 
