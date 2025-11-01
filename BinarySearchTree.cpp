@@ -33,7 +33,12 @@ void BinarySearchTree::insert(int key){
 
 }
 
+bool BinarySearchTree::search(int key){
+    return search(root, key);
+}
+
 bool BinarySearchTree::search(Node* node, int key){
+    // para usar la recursion tenemos que llamar a este metodo con root como el node
     if (node == nullptr) return false;
     if (node->key == key) return true;
 
@@ -45,7 +50,7 @@ bool BinarySearchTree::search(Node* node, int key){
 
 }
 
-void BinarySearchTree::remove(Node* node, int key){
+void BinarySearchTree::remove(int key){
     if (!search(root, key)) return;
 
     Node* current = root;
@@ -166,8 +171,13 @@ void BinarySearchTree::postorder() {
     std::cout << std::endl;
 }
 
+void BinarySearchTree::display(){
+    display(root, 0);
+    return;
+}
 
-void BinarySearchTree::display(Node* node, int indent){
+void BinarySearchTree::display(Node* node, int indent){ 
+    // para usar la recursion ocupamos llamarlo con el nodo root e indenatacion de 0
     if (node == nullptr) return;
 
         display(node->right, indent + 4);

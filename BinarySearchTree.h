@@ -15,15 +15,17 @@ class Node{
 class BinarySearchTree{
     private:
         Node* root;
+        bool search(Node* node, int key);
+        void display(Node* node, int indent);
     public:
         BinarySearchTree(){root = nullptr;}
         void insert(int key);
-        bool search(Node* node, int key);
-        void remove(Node* node, int key);
+        bool search(int key);
+        void remove(int key);
         void inorder();
         void preorder();
         void postorder();
-        void display(Node* node, int indent);
+        void display();
 };
 
 #endif
