@@ -23,7 +23,7 @@ class BinarySearchTree{
         void inorder();
         void preorder();
         void postorder();
-        void display();
+        void display(Node* node, int indent);
 };
 
 #endif

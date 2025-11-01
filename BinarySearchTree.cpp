@@ -167,6 +167,15 @@ void BinarySearchTree::postorder() {
 }
 
 
-void BinarySearchTree::display(){
+void BinarySearchTree::display(Node* node, int indent){
+    if (node == nullptr) return;
+
+        display(node->right, indent + 4);
+
+        for (int i = 0; i < indent; i++)
+            std::cout << ' ';
+        std::cout << node->key << std::endl;
+
+        display(node->left, indent + 4);
 
 }
