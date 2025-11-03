@@ -89,3 +89,4 @@ Se utiliza la técnica de Two Pointers:
 Este enfoque es O(n) y evita realocar memoria muchas veces.
 ```bash
 g++ -std=c++11 chat_cleaner.cpp -o chat_cleaner
+
