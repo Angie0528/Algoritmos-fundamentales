@@ -1,27 +1,23 @@
 # Binary Search Tree
 Este proyecto consiste en la implementación de un Binary Search Tree en C++, utilizando clases, punteros y estructuras de stack para realizar recorridos iterativos.
 
-# Que incluye?
+## Que incluye?
 La clase BinarySearchTree permite:
 - Insertar elementos en el arbol
 - Buscar si  un valor existe o no
 - Eliminar nodos (sin hijos, con uno o con dos)
 - Mostrar el arbol en consola
 - Recorrer el arbol en:
--   Orden (inorder)
--   Preorder (preorder)
--   Postorder (postorder)
+  - Orden (inorder)
+  - Preorder (preorder)
+  - Postorder (postorder)
   
-## Descripción
-En una aplicación de chat, cuando un usuario elimina un mensaje, este no se borra inmediatamente de memoria (porque reorganizar memoria constantemente sería costoso).  
-En su lugar, se marca el mensaje con un flag `deleted = true`.  
+## Como compilar
+```
+g++ main.cpp BinarySearchTree.cpp -o bst
+./bst
+```
 
-Más adelante, cuando el historial crece demasiado, se ejecuta un **algoritmo de limpieza** que compacta el historial, moviendo los mensajes válidos al frente y dejando los eliminados al final.
-
-Este proyecto muestra:
-- Cómo simular un historial de mensajes con usuarios y textos.
-- Cómo marcar mensajes como eliminados.
-- Cómo usar el algoritmo **two pointers** para compactar eficientemente el historial.
 
 ## Funcionalidades
 - Generación de un historial de `n` mensajes entre dos usuarios (Alice y Bob).
