@@ -1,10 +1,17 @@
-# Algoritmos-fundamentales
-Repositorio con implementaciones de algoritmos para la clase de Programacion
+# Binary Search Tree
+Este proyecto consiste en la implementación de un Binary Search Tree en C++, utilizando clases, punteros y estructuras de stack para realizar recorridos iterativos.
 
-# Chat History Cleaner 
-
-Este proyecto implementa una simulación de historial de chat y un algoritmo de compactación de mensajes eliminados (garbage collection) en C++.
-
+# Que incluye?
+La clase BinarySearchTree permite:
+- Insertar elementos en el arbol
+- Buscar si  un valor existe o no
+- Eliminar nodos (sin hijos, con uno o con dos)
+- Mostrar el arbol en consola
+- Recorrer el arbol en:
+-   Orden (inorder)
+-   Preorder (preorder)
+-   Postorder (postorder)
+  
 ## Descripción
 En una aplicación de chat, cuando un usuario elimina un mensaje, este no se borra inmediatamente de memoria (porque reorganizar memoria constantemente sería costoso).  
 En su lugar, se marca el mensaje con un flag `deleted = true`.  
