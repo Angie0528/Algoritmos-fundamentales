@@ -110,3 +110,7 @@ Agregando documentos a la cola:
 PRUEBAS COMPLETADAS
 ==================================================
 ```
+
+
+## Video
+https://youtu.be/Ckq62lXs4Ug
