@@ -25,4 +25,3 @@ class Stack:
     
     def __str__(self):
         return f"Stack({self.items})"
-
