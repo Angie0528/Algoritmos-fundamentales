@@ -11,20 +11,30 @@ int main(){
     bst.insert(4);
     bst.insert(30);
 
+    std::cout << "Inorder: ";
     bst.inorder();
+    std::cout << "\n";
+    std::cout << "Preorder: ";
     bst.preorder();
-    bst.postorder();
+    std::cout << "\n";
+    std::cout << "Postorder: ";
+    bst.inorder();
+    std::cout << "\n";
+
     std::cout << "----------------------\n";
-    std::cout << bst.search(49) << "\n";
-    std::cout << bst.search(50) << "\n";
-    std::cout << bst.search(4) << "\n";
+    std::cout << bst.search(49) << " - Si existe\n";
+    std::cout << bst.search(50) << " - No existe\n";
+    std::cout << bst.search(4) << " - Si existe\n";
+
     std::cout << "----------------------\n";
     bst.display();
+
     std::cout << "----------------------\n";
     bst.remove(20);
     bst.remove(80);
     bst.display();
     std::cout << "----------------------\n";
+    
     bst.remove(49);
     bst.insert(50);
     bst.display();
