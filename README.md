@@ -14,7 +14,7 @@ La clase BinarySearchTree permite:
   
 ## Como compilar
 ```
-g++ main.cpp BinarySearchTree.cpp -o bst
+g++ BST.cpp BinarySearchTree.cpp -o bst
 ./bst
 ```
 
@@ -51,3 +51,5 @@ Postorder: 4 12 20 30 49 80
 ----------------------
 
 ```
+## Video
+https://youtu.be/bPPCpva1MLQ
