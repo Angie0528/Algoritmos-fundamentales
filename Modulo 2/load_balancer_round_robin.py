@@ -1,6 +1,15 @@
-import matplotlib.pyplot as plt
 from collections import deque
 
+# Intentar importar matplotlib de forma opcional para que el script funcione
+# incluso si la libreria no está instalada.
+try:
+    import matplotlib.pyplot as plt
+    _MATPLOTLIB_DISPONIBLE = True
+except ImportError:
+    plt = None
+    _MATPLOTLIB_DISPONIBLE = False
+
+# -----------------------------------------------------------------------------
 
 class Servidor:
     "Clase que representa un servidor en el sistema"
@@ -97,11 +106,20 @@ class LoadBalancerRoundRobin:
     
     def visualizar_distribucion(self, guardar_archivo=True):
         """
-        Crea una visualizacion grafica de la distribucion de carga
+        Crea una visualizacion grafica de la distribucion de carga.
+
+        Si matplotlib no está instalado, solo muestra un mensaje en consola
+        indicando cómo instalarlo para ver la gráfica.
         
         Args:
             guardar_archivo: Si True, guarda la grafica como imagen
         """
+        if not _MATPLOTLIB_DISPONIBLE:
+            print("\n[AVISO] matplotlib no está instalado. Ejecuta:")
+            print("  pip install matplotlib")
+            print("para habilitar la visualización gráfica.")
+            return
+
         estadisticas = self.obtener_estadisticas()
         
         servidores = list(estadisticas.keys())
@@ -133,7 +151,8 @@ class LoadBalancerRoundRobin:
         plt.tight_layout()
         
         if guardar_archivo:
-            plt.savefig('/home/ubuntu/distribucion_carga_round_robin.png', dpi=300, bbox_inches='tight')
+            # Guardar en el directorio actual para que funcione en cualquier sistema
+            plt.savefig('distribucion_carga_round_robin.png', dpi=300, bbox_inches='tight')
             print("\nGrafica guardada como: distribucion_carga_round_robin.png")
         
         plt.show()
