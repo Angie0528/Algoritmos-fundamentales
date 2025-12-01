@@ -1,7 +1,7 @@
 from collections import deque
 
 # Intentar importar matplotlib de forma opcional para que el script funcione
-# incluso si la libreria no está instalada.
+# incluso si la libreria no está instalada ( Fix para Mac )
 try:
     import matplotlib.pyplot as plt
     _MATPLOTLIB_DISPONIBLE = True
