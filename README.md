@@ -1,4 +1,12 @@
-# Simulador de Balanceador de Carga - Algoritmo Round Robin
+# Modulo 1: Algoritmo de Dijkstra con animación.
+
+
+
+
+
+
+
+# Modulo 2: Simulador de Balanceador de Carga - Algoritmo Round Robin
 
 Este proyecto es una simulacion en Python del comportamiento de un balanceador de carga que distribuye solicitudes entre multiples servidores utilizando el algoritmo **Round Robin**. El objetivo es demostrar como se logra una distribucion equitativa de la carga y visualizar los resultados.
 
@@ -71,4 +79,8 @@ Este repositorio incluye los siguientes archivos:
 - `distribucion_carga_round_robin.png`: La imagen generada por la simulacion que muestra la distribucion de la carga.
 
 - `README.md`: Este mismo archivo, que sirve como guia general del proyecto.
+
+
+# Modulo 3: Algoritmo de Recomendaciones basado en amigos ( Red Social )
+
 
