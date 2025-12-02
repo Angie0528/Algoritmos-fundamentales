@@ -49,7 +49,10 @@ vector<string> recomendaciones(Usuario* usuario){
 
     //Recomendamos solo los mas populares
     vector<pair<string, double>> lista(gustos_populares.begin(), gustos_populares.end());
-    sort(lista.begin(), lista.end());
+    sort(lista.begin(), lista.end(), [](auto& a, auto& b){
+        return a.second < b.second;
+    });
+
     for (int i = lista.size() - 1; i > -1; i--) {
         if(recomendar.size() == max_recomendaciones) break;
         recomendar.push_back(lista[i].first);
@@ -103,6 +106,9 @@ int main(){
 
     for(Usuario* usuario : red.getUsuarios()){
         if (usuario->getNombre() != "Sofia") sofia->agregarAmigo(usuario);
+        if (usuario->getNombre() != "Andre") andre->agregarAmigo(usuario);
+        if (usuario->getNombre() != "Genaro") genaro->agregarAmigo(usuario);
+        if (usuario->getNombre() != "Eilyn") eilyn->agregarAmigo(usuario);
     }
 
     cout << "---------------------------\n";
