@@ -55,7 +55,7 @@ Esta función es el punto de entrada del programa. Se encarga de:
     - Finalmente, podrás ingresar nodos de destino para ver la ruta detallada o escribir `salir` para terminar.
 
 
-## Video explicatorio: ( URL )
+## Video explicatorio:
 https://youtu.be/M8cv2TapcXs
 
 
@@ -122,7 +122,9 @@ Al ejecutar el script, veras la siguiente informacion en la consola:
 
 1. **Archivo de Imagen**: Se generara y guardara un archivo llamado `distribucion_carga_round_robin.png` en el mismo directorio, conteniendo las visualizaciones graficas.
 
-## Video explicatorio: ( URL )
+## Video explicatorio:
+( https://youtu.be/UctuGu1ybPY )
+
 
 
 
