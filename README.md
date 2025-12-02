@@ -135,30 +135,30 @@ Este proyecto implementa una red social con un sistema de recomendaciones basado
 
 ## Arquitectura del Sistema
 Estructura de Archivos
-- Usuario.h           # Definición de la clase Usuario
-- Usuario.cpp         # Implementación de métodos de Usuario
-- RedSocial.h         # Definición de la clase RedSocial
-- RedSocial.cpp       # Implementación de métodos de RedSocial
-- main.cpp            # Programa principal con algoritmos de recomendación
+- Usuario.h           : Definición de la clase Usuario
+- Usuario.cpp         : Implementación de métodos de Usuario
+- RedSocial.h         : Definición de la clase RedSocial
+- RedSocial.cpp       : Implementación de métodos de RedSocial
+- main.cpp            : Programa principal con algoritmos de recomendación
 
 ## Clases Principales
 Clase Usuario
-    Atributos:
-        nombre: Identificador único del usuario
-        gustos: Conjunto de intereses
-        amigos: Lista de conexiones sociales
-    Funcionalidades:
-        Gestión de gustos/intereses
-        Gestión de relaciones de amistad
-        Acceso controlado a datos privados
+- Atributos:
+    - nombre: Identificador único del usuario
+    - gustos: Conjunto de intereses
+    - amigos: Lista de conexiones sociales
+- Funcionalidades:
+    - Gestión de gustos/intereses
+    - Gestión de relaciones de amistad
+    - Acceso controlado a datos privados
 
 Clase RedSocial
-    Atributos:
-        usuarios: Mapa de usuarios indexados por nombre
-    Funcionalidades:
-        Creación y eliminación de usuarios
-        Búsqueda eficiente de usuarios
-        Gestión automática de memoria
+- Atributos:
+    - usuarios: Mapa de usuarios indexados por nombre
+- Funcionalidades:
+    - Creación y eliminación de usuarios
+    - Búsqueda eficiente de usuarios
+    - Gestión automática de memoria
 
 ## Algoritmos Implementados
 1. Algoritmo de Cálculo de Similitud
@@ -175,34 +175,36 @@ Fórmula de Ponderación:
     peso_amigo = gustos_comunes / total_gustos_amigo
     
 ## Ejemplo de Salida
----------------------------
+
 Gustos de los Usuarios: 
     Sofia: 
        - Musica
        - Cine
        - Tecnologia
        ...
----------------------------
+       
 Similitudes entre Usuarios: 
 Andre y Sofia tienen: 8 intereses en comun.
 Genaro y Eilyn tienen: 5 intereses en comun.
 ...
----------------------------
+
 Recomendaciones para Sofia: 
 - Fotografia
 - Viajes
 - Lectura
 - Cine
----------------------------
 
 ### Compilación y Ejecución
-    Compilación
-        bash
-        g++ -std=c++11 -o red_social *.cpp
-    Ejecución
-        bash
-        ./red_social
-    Dependencias: Solo biblioteca estándar de C++
+- Compilación
+```bash
+g++ -std=c++11 -o red_social *.cpp
+```
+        
+- Ejecución
+```bash
+./redsocial
+```
+- Dependencias: Solo biblioteca estándar de C++
 
 ## Video explicatorio: ( URL )
 ( https://youtu.be/AbbKrJhisIQ )
