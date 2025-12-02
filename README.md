@@ -130,6 +130,194 @@ Al ejecutar el script, veras la siguiente informacion en la consola:
 
 # Modulo 3: Algoritmo de Recomendaciones basado en amigos ( Red Social )
 
-aaaa
+ Sistema de Red Social con Recomendaciones Inteligentes
+📋 Descripción del Proyecto
+Este proyecto implementa una red social completa con un sistema avanzado de recomendaciones basado en análisis de afinidades entre usuarios. El sistema permite gestionar usuarios, sus intereses, relaciones de amistad y proporciona recomendaciones personalizadas utilizando algoritmos eficientes y optimizados.
+
+🏗️ Arquitectura del Sistema
+Estructura de Archivos
+text
+├── Usuario.h           # Definición de la clase Usuario
+├── Usuario.cpp         # Implementación de métodos de Usuario
+├── RedSocial.h         # Definición de la clase RedSocial  
+├── RedSocial.cpp       # Implementación de métodos de RedSocial
+└── main.cpp            # Programa principal con algoritmos de recomendación
+Clases Principales
+👤 Clase Usuario
+Atributos:
+
+nombre: Identificador único del usuario
+
+gustos: Conjunto de intereses (unordered_set<string>)
+
+amigos: Lista de conexiones sociales (vector<Usuario*>)
+
+Funcionalidades:
+
+Gestión de gustos/intereses
+
+Gestión de relaciones de amistad
+
+Acceso controlado a datos privados
+
+🌐 Clase RedSocial
+Atributos:
+
+usuarios: Mapa de usuarios indexados por nombre (unordered_map<string, Usuario*>)
+
+Funcionalidades:
+
+Creación y eliminación de usuarios
+
+Búsqueda eficiente de usuarios
+
+Gestión automática de memoria
+
+⚡ Algoritmos Implementados
+1. 🎯 Algoritmo de Cálculo de Similitud (Optimizado)
+cpp
+Complejidad: O(n + m) donde n y m son gustos de cada usuario
+Estrategia: Utiliza unordered_set para búsquedas en tiempo constante O(1)
+
+Ventaja: Evita el enfoque O(n²) tradicional mediante hashing
+
+Resultado: Calcula gustos compartidos entre dos usuarios eficientemente
+
+2. 🤝 Algoritmo de Recomendación con Ponderación por Afinidad
+cpp
+Complejidad: O(U + A×G + G log G)
+Fase 1: Calcula "fuerza de amistad" basada en similitud porcentual
+
+Fase 2: Pondera recomendaciones según afinidad con cada amigo
+
+Fase 3: Selecciona los 3 gustos mejor puntuados excluyendo los ya existentes
+
+Fórmula de Ponderación:
+
+text
+peso_amigo = gustos_comunes / total_gustos_amigo
+puntuación_gusto = Σ peso_amigo (para cada amigo que tenga ese gusto)
+🚀 Características Técnicas
+🔄 Estructuras de Datos Optimizadas
+unordered_set<string>: Para gustos (inserción y búsqueda O(1))
+
+unordered_map<string, Usuario*>: Para usuarios (acceso O(1) por nombre)
+
+vector<Usuario*>: Para relaciones (iteración eficiente)
+
+💾 Gestión de Memoria
+Sistema de propiedad claro: RedSocial posee todos los objetos Usuario
+
+Destructor automático que libera toda la memoria
+
+Uso de punteros raw para relaciones (sin overhead de smart pointers)
+
+🎲 Generación de Datos Realista
+20 categorías de gustos predefinidas
+
+Asignación aleatoria de 5-20 gustos por usuario
+
+Configuración flexible de redes sociales
+
+📊 Ejemplo de Salida
+text
+---------------------------
+Gustos de los Usuarios: 
+   - Sofia: 
+   - Musica
+   - Cine
+   - Tecnologia
+   ...
+---------------------------
+Similitudes entre Usuarios: 
+Andre y Sofia tienen: 8 intereses en comun.
+Genaro y Eilyn tienen: 5 intereses en comun.
+...
+---------------------------
+Recomendaciones para Sofia: 
+- Fotografia
+- Viajes
+- Lectura
+---------------------------
+🔧 Compilación y Ejecución
+Compilación
+bash
+g++ -std=c++11 -o red_social *.cpp
+Ejecución
+bash
+./red_social
+📈 Rendimiento
+Similitud entre usuarios: O(n + m) en lugar de O(n × m)
+
+Búsqueda de usuarios: O(1) mediante hash tables
+
+Gestión de gustos: Operaciones O(1) promedio
+
+Escalabilidad: Diseñado para soportar miles de usuarios eficientemente
+
+🎯 Casos de Uso
+Análisis de Afinidades: Descubre qué usuarios comparten intereses
+
+Recomendaciones Personalizadas: Sugiere nuevos intereses basados en la red social
+
+Gestión de Comunidades: Administra usuarios y sus relaciones
+
+Simulación de Redes: Crea redes sociales virtuales para pruebas
+
+✅ Ventajas del Diseño
+Alto Rendimiento
+Algoritmos optimizados con complejidades lineales
+
+Estructuras de datos seleccionadas específicamente para cada operación
+
+Sin cuellos de botella computacionales
+
+Mantenibilidad
+Separación clara de responsabilidades
+
+Código legible y bien documentado
+
+Fácil extensión para nuevas funcionalidades
+
+Robustez
+Manejo de excepciones para casos límite
+
+Validación de entrada de datos
+
+Gestión automática de recursos
+
+🧠 Conceptos de Ciencias de la Computación Aplicados
+Estructuras de Datos: Hash tables, sets, vectors, maps
+
+Algoritmos: Búsqueda, ordenamiento, análisis de grafos
+
+Complejidad Computacional: Análisis Big O optimizado
+
+Gestión de Memoria: Ownership patterns y RAII
+
+Programación Orientada a Objetos: Encapsulación, abstracción
+
+📝 Notas Técnicas
+Lenguaje: C++11 estándar
+
+Paradigma: Orientado a objetos con algoritmos procedurales
+
+Dependencias: Solo biblioteca estándar de C++
+
+Plataforma: Multiplataforma (Windows/Linux/macOS)
+
+🏆 Puntos Destacados
+Algoritmo de similitud optimizado que evita complejidad cuadrática
+
+Sistema de recomendaciones que considera calidad sobre cantidad
+
+Arquitectura limpia con responsabilidades bien definidas
+
+Código eficiente que prioriza rendimiento sin sacrificar legibilidad
+
+🎯 Objetivo Logrado: Sistema de red social funcional con recomendaciones inteligentes, algoritmos eficientes y arquitectura sólida.
+
+
 
 ## Video explicatorio: ( URL )
+( https://youtu.be/AbbKrJhisIQ )
