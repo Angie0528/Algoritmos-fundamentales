@@ -101,7 +101,7 @@ def animate_dijkstra(graph: Graph, start: str, dest: str):
 
 def main():
     graph = Graph()
-    # Grafo basado en tu imagen del campus Tec Guadalajara
+    # distancias de la imagen del grafo
     graph.add_edge('A', 'B', 33.35)
     graph.add_edge('B', 'D', 58.10)
     graph.add_edge('D', 'F', 77.73)
@@ -114,7 +114,7 @@ def main():
     graph.add_edge('E', 'C', 44.50)
     graph.add_edge('C', 'A', 30.42)
 
-    print("=== ALGORITMO DE DIJKSTRA ===")
+    print("ALGORITMO DE DIJKSTRA ANIMACION")
     print(f"Nodos disponibles: {', '.join(sorted(graph.graph.keys()))}")
     start_node = input("Nodo origen: ").strip().upper()
     dest_node = input("Nodo destino: ").strip().upper()
