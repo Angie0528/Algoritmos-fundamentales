@@ -22,7 +22,7 @@ int calcularSimilitud(Usuario* usuario1, Usuario* usuario2){
 
 vector<string> recomendaciones(Usuario* usuario){
     vector<string> recomendar;
-    int max_recomendaciones = 3;
+    int max_recomendaciones = 4;
     unordered_map<string, double> gustos_populares;
 
     //Primero lo llenamos el mapa con los intereses del mismo usuario
@@ -90,7 +90,7 @@ int main(){
     red.crearUsuario("Andre");
 
     for(Usuario* usuario_existente : red.getUsuarios()){
-        int num_gustos = 5 + rand() % 15;
+        int num_gustos = 7 + rand() % 13;
         for (int i = 0; i < num_gustos; i++){
             usuario_existente->insertarGusto(gustos_generales[rand() % 20]);
         }
