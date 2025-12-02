@@ -55,7 +55,8 @@ Esta función es el punto de entrada del programa. Se encarga de:
     - Finalmente, podrás ingresar nodos de destino para ver la ruta detallada o escribir `salir` para terminar.
 
 
-
+## Video explicatorio: ( URL )
+https://youtu.be/M8cv2TapcXs
 
 
 
@@ -121,19 +122,12 @@ Al ejecutar el script, veras la siguiente informacion en la consola:
 
 1. **Archivo de Imagen**: Se generara y guardara un archivo llamado `distribucion_carga_round_robin.png` en el mismo directorio, conteniendo las visualizaciones graficas.
 
-## Entregables del Proyecto
+## Video explicatorio: ( URL )
 
-Este repositorio incluye los siguientes archivos:
-
-- `load_balancer_round_robin.py`: El codigo fuente principal de la simulacion.
-
-- `documento_explicativo.md`: Un documento que profundiza en la descripcion del algoritmo, la justificacion del modelo y el analisis de complejidad.
-
-- `distribucion_carga_round_robin.png`: La imagen generada por la simulacion que muestra la distribucion de la carga.
-
-- `README.md`: Este mismo archivo, que sirve como guia general del proyecto.
 
 
 # Modulo 3: Algoritmo de Recomendaciones basado en amigos ( Red Social )
 
 aaaa
+
+## Video explicatorio: ( URL )
